@@ -310,7 +310,12 @@
 
   /* ---------- Panel: RSVP / closing ---------- */
   .rsvp-headline{ font-family:'Cinzel', serif; font-weight:600; font-size:1rem; color:var(--ink); }
-  .rsvp-sub{ font-size:.98rem; color:var(--ink-soft); margin-top:.25em; max-width:20em; }
+  .rsvp-sub{
+    font-size:1.05rem; font-weight:600; color:var(--blue-deep);
+    margin-top:.35em; max-width:20em;
+    animation: titleGlow 3.5s ease-in-out infinite;
+  }
+  .rsvp-sub b{ color:var(--blue-deeper); font-family:'Cinzel', serif; font-size:.92rem; letter-spacing:.04em; }
   .pases-info{ margin-top:1.1em; }
   .pases-num{ font-family:'Cinzel Decorative', serif; font-weight:700; font-size:2rem; color:var(--blue-deep); }
   .wa-btn{
@@ -507,7 +512,7 @@
     <!-- Panel 7 — RSVP / closing -->
     <section class="panel" id="panel-rsvp">
       <div class="rsvp-headline">Confirma tu asistencia aquí</div>
-      <div class="rsvp-sub">Por favor confirmar asistencia antes del 8 de Agosto</div>
+      <div class="rsvp-sub">Por favor confirmar asistencia antes del <b>8 de Agosto</b></div>
 
       <div class="pases-info" id="pasesInfo" style="display:none;">
         <div class="eyebrow">Pases asignados</div>
