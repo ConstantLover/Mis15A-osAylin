@@ -358,6 +358,52 @@
     .env-click-hint{ animation:none !important; }
     .butterfly, .twinkle{ display:none; }
   }
+
+  /* =================================================================
+     RESPONSIVE
+  ================================================================= */
+  /* Celulares pequeños (hasta 400px de ancho) */
+  @media (max-width:400px){
+    .panel{ padding:4.5em 6vw 3.5em; }
+    .date-chips{ gap:.6em; }
+    .date-chip.num{ font-size:2.1rem; }
+    .clock-wrap{ width:110px; height:110px; }
+    .countdown-row{ gap:.6em; }
+    .cd-block{ min-width:44px; }
+    .cd-num{ font-size:1.6rem; }
+    .cd-label{ font-size:.66rem; }
+    .cta-btn{ font-size:.78rem; padding:.8em 1.3em; letter-spacing:.08em; }
+    .tree-row{ grid-template-columns:1fr 36px 18px 36px 1fr; column-gap:.25em; }
+    .tr-icon{ width:36px; height:36px; }
+    .tr-icon svg{ width:16px; height:16px; }
+    .tr-label .tr-name{ font-size:1.05rem; }
+    .tr-label .tr-time{ font-size:.84rem; }
+    .quote-text{ font-size:1.12rem; }
+    .story-text{ font-size:1.18rem; }
+    .loc-name{ font-size:1.12rem; }
+    .loc-addr{ font-size:1rem; }
+    .gift-text{ font-size:1.1rem; }
+    .rsvp-sub{ font-size:1.1rem; }
+    .env-caption{ font-size:1.5rem; }
+    #dots{ right:2.5vw; gap:9px; }
+    #dots .dot{ width:6px; height:6px; }
+    .bg-vine{ width:56px; background-size:56px 220px !important; opacity:.65; }
+  }
+
+  /* Pantallas grandes (tablet/computadora): columna centrada tipo tarjeta */
+  @media (min-width:720px){
+    #scrollContent{ max-width:520px; margin:0 auto; }
+    .panel{ padding:5.5em 3em 4em; }
+    #invite{
+      background:
+        linear-gradient(180deg, #ffffff, var(--pale) 10%, var(--pale-deep) 75%, #c3d9ec 100%);
+    }
+    #scrollContent{
+      background:rgba(255,255,255,0.35);
+      box-shadow:0 0 60px rgba(38,65,90,0.12);
+    }
+    #dots{ right:calc(50% - 300px); }
+  }
 </style>
 </head>
 <body>
@@ -413,7 +459,7 @@
     <!-- Panel 2 — Photo / Story -->
     <section class="panel">
       <div class="frame-oval">
-        <img src="aylin.jpeg" alt="Aylin">
+        <img src="aylin.jpg" alt="Aylin">
       </div>
       <p class="story-text">Como en todo cuento de hadas, esta noche una historia comienza. Te invito a ser parte de ella.</p>
     </section>
@@ -514,7 +560,7 @@
       <div class="rsvp-sub">Por favor confirmar asistencia antes del <b>8 de Agosto</b></div>
 
       <div class="pases-info" id="pasesInfo" style="display:none;">
-        <div class="eyebrow">Pases asignados</div>
+        <div class="eyebrow">Invitados asignados</div>
         <div class="pases-num" id="pasesNum"></div>
       </div>
 
@@ -532,7 +578,7 @@
 
 <script>
 /* Cambia este número si en algún momento usas otro WhatsApp */
-const WHATSAPP_NUMBER = "50232234800";
+const WHATSAPP_NUMBER = "50237793354";
 
 /* ---------------- Itinerary tree ---------------- */
 const icons = {
@@ -548,7 +594,7 @@ const icons = {
 const pairs = [
   { left:{name:'Misa', time:'4:00 pm', icon:'church'}, right:{name:'Recepción', time:'6:30 pm', icon:'bell'} },
   { left:{name:'Vals', time:'7:00 pm', icon:'waltz'}, right:{name:'Cena', time:'8:00 pm', icon:'dinner'} },
-  { left:{name:'Fiesta', time:'8:00 pm', icon:'sparkle'}, right:{name:'Pastel', time:'11:00 pm', icon:'cake'} },
+  { left:{name:'Fiesta', time:'9:00 pm', icon:'sparkle'}, right:{name:'Pastel', time:'11:00 pm', icon:'cake'} },
   { left:{name:'Despedida', time:'12:00 am', icon:'moon'} }
 ];
 document.getElementById('itinTree').innerHTML = pairs.map(p => {
@@ -737,19 +783,20 @@ function spawnTwinkles(){
 spawnButterflies();
 spawnTwinkles();
 
-/* ---------------- Personalización por invitado (nombre + pases via URL) ---------------- */
+/* ---------------- Personalización por invitado (nombre + invitados via URL) ----------------
+   El link acepta ?invitados=2 (nuevo) y también ?pases=2 (links antiguos siguen funcionando) */
 const params = new URLSearchParams(window.location.search);
 const guestName = params.get('name');
-const guestPases = params.get('pases');
+const guestInvitados = params.get('invitados') || params.get('pases');
 
-if (guestPases) {
-  document.getElementById('pasesNum').textContent = guestPases;
+if (guestInvitados) {
+  document.getElementById('pasesNum').textContent = guestInvitados;
   document.getElementById('pasesInfo').style.display = 'block';
 }
 
 let baseMsg = 'Confirmo mi asistencia a los XV años de Aylin.';
 if (guestName) baseMsg += ` Soy ${guestName}.`;
-if (guestPases) baseMsg += ` Número de pases: ${guestPases}.`;
+if (guestInvitados) baseMsg += ` Número de invitados: ${guestInvitados}.`;
 
 const waBtn = document.getElementById('waBtn');
 waBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(baseMsg)}`;
