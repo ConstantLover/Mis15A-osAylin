@@ -195,18 +195,17 @@
   .cd-num{ font-family:'Cinzel Decorative', serif; font-weight:700; font-size:1.9rem; color:var(--blue-deep); }
   .cd-label{ font-family:'Cinzel', serif; font-weight:600; font-size:.72rem; letter-spacing:.12em; color:var(--blue-deeper); text-transform:uppercase; margin-top:.25em;}
   .cd-sep{ font-family:'Cinzel Decorative', serif; font-size:1.5rem; color:var(--blue-soft); align-self:flex-start; margin-top:.05em;}
-  .cta-btn{
-    display:inline-block; margin-top:1.8em;
-    padding:.85em 1.9em;
-    font-family:'Cinzel', serif; font-weight:600; letter-spacing:.12em; font-size:.86rem; text-transform:uppercase;
-    color:#fff; text-decoration:none; line-height:1.7;
-    background:linear-gradient(180deg, var(--blue-mid), var(--blue-deeper));
-    border-radius:999px;
-    box-shadow: 0 10px 22px rgba(27,51,80,0.32), inset 0 1px 0 rgba(255,255,255,0.35);
-    transition: transform .25s ease;
-    cursor:pointer; border:none;
+  .cta-note{
+    margin-top:1.8em;
+    font-family:'Cinzel', serif; font-weight:600; letter-spacing:.14em; font-size:.92rem; text-transform:uppercase;
+    color:#7ec8f2;
+    text-shadow:0 0 10px rgba(77,183,255,0.75), 0 0 22px rgba(77,183,255,0.4);
+    animation: ctaNoteGlow 3s ease-in-out infinite;
   }
-  .cta-btn:active{ transform:scale(.96); }
+  @keyframes ctaNoteGlow{
+    0%,100%{ text-shadow:0 0 8px rgba(77,183,255,0.55), 0 0 18px rgba(77,183,255,0.3); }
+    50%{ text-shadow:0 0 14px rgba(130,210,255,0.95), 0 0 30px rgba(77,183,255,0.55); }
+  }
   /* ---------- Panel: locations ---------- */
   .loc-block{ margin-top:0; }
   .loc-heading{ font-family:'Cinzel', serif; font-weight:600; font-size:1rem; letter-spacing:.12em; color:var(--blue-deeper); text-transform:uppercase; }
@@ -300,11 +299,7 @@
   }
   .gift-highlight::before{ top:10px; left:14px; }
   .gift-highlight::after{ bottom:10px; right:14px; }
-  .gift-label{
-    font-family:'Cinzel', serif; font-weight:600; letter-spacing:.26em; font-size:.82rem;
-    color:var(--blue-deeper); text-transform:uppercase; margin-bottom:.2em;
-  }
-  .gift-icon{ width:52px; height:52px; margin:.5em auto .8em; display:block;
+  .gift-icon{ width:52px; height:52px; margin:.2em auto .8em; display:block;
     filter: drop-shadow(0 0 6px rgba(77,183,255,0.5));
   }
   .gift-text{ font-size:1.24rem; color:var(--ink); max-width:24em; line-height:1.65; margin:0 auto;}
@@ -392,7 +387,7 @@
     .cd-block{ min-width:44px; }
     .cd-num{ font-size:1.6rem; }
     .cd-label{ font-size:.66rem; }
-    .cta-btn{ font-size:.78rem; padding:.8em 1.3em; letter-spacing:.08em; }
+    .cta-note{ font-size:.82rem; letter-spacing:.1em; }
     .tree-row{ grid-template-columns:1fr 36px 18px 36px 1fr; column-gap:.25em; }
     .tr-icon{ width:36px; height:36px; }
     .tr-icon svg{ width:16px; height:16px; }
@@ -496,7 +491,7 @@
       </div>
       <div class="faltan-label">Faltan</div>
       <div class="countdown-row" id="countdown"></div>
-      <button class="cta-btn" id="ctaRsvp">Sigue hasta el final</button>
+      <div class="cta-note">Sigue hasta el final</div>
     </section>
     <div class="panel-sep"><div class="line"></div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.3-8.55A5 5 0 0112 6.4a5 5 0 019.3 6.05C19 16.65 12 21 12 21z" fill="none" stroke="rgb(74,122,163)" stroke-width="1.3"/></svg><div class="line"></div></div>
     <!-- Panel 4 — Locations -->
@@ -536,7 +531,6 @@
       </div>
       <div class="divider"></div>
       <div class="gift-highlight">
-        <div class="gift-label">Regalo</div>
         <svg class="gift-icon" viewBox="0 0 24 24" fill="none" stroke="rgb(74,122,163)" stroke-width="1.4">
           <rect x="3" y="9" width="18" height="11" stroke-linejoin="round"/>
           <path d="M3 9h18v4H3z" fill="rgba(191,214,232,0.5)"/>
@@ -673,9 +667,6 @@ function renderCountdown(){
 }
 renderCountdown();
 setInterval(renderCountdown, 1000);
-/* ---------------- Scroll helper ---------------- */
-function goTo(id){ document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'}); }
-document.getElementById('ctaRsvp').addEventListener('click', ()=> goTo('panel-rsvp'));
 /* ---------------- Dots nav ---------------- */
 const inviteEl = document.getElementById('invite');
 const panels = Array.from(document.querySelectorAll('.panel'));
@@ -705,7 +696,7 @@ function spawnSparkle(x,y){
   setTimeout(()=> s.remove(), 900);
 }
 document.addEventListener('pointerdown', (e)=>{
-  if(e.target.closest('.env-wrap') || e.target.closest('.wa-btn') || e.target.closest('.cta-btn')) return;
+  if(e.target.closest('.env-wrap') || e.target.closest('.wa-btn')) return;
   spawnSparkle(e.clientX, e.clientY);
 });
 /* ---------------- Mariposas neón flotantes ---------------- */
