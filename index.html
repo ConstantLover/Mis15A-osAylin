@@ -34,7 +34,6 @@
     -webkit-tap-highlight-color: transparent;
   }
   ::selection{background:var(--blue-pale); color:var(--ink);}
-
   /* =================================================================
      ENVELOPE SCREEN
   ================================================================= */
@@ -47,25 +46,21 @@
     overflow:hidden;
   }
   #envelope-screen.hidden{ opacity:0; visibility:hidden; pointer-events:none; }
-
   .bg-vine{
     position:absolute; top:0; bottom:0; width:76px; z-index:0; pointer-events:none;
     background-repeat:repeat-y; opacity:.9;
   }
   .bg-vine.left{ left:-4px; }
   .bg-vine.right{ right:-4px; transform:scaleX(-1); }
-
   .corona-img{
     width:min(92vw,380px); z-index:1; display:block; margin:0 auto;
     mix-blend-mode:multiply;
   }
-
   .env-caption{
     font-family:'Great Vibes', cursive; font-weight:400; font-size:1.8rem; color:var(--blue-deeper);
     margin-top:.3em; z-index:1; text-align:center;
     text-shadow:0 1px 0 rgba(255,255,255,0.8);
   }
-
   .env-wrap{
     position:relative; z-index:1;
     width:min(58vw, 220px);
@@ -80,7 +75,6 @@
     transition: transform .9s cubic-bezier(.4,0,.2,1), opacity .9s ease;
   }
   #envelope-screen.open .env-wrap img{ transform: scale(1.08) rotate(3deg); opacity:0; }
-
   .env-click-hint{
     z-index:1; margin-top:.6em; text-align:center;
     font-family:'Cinzel', serif; font-weight:600; letter-spacing:.16em; font-size:.92rem;
@@ -88,7 +82,6 @@
     animation: pulseHint 2.2s ease-in-out infinite;
   }
   @keyframes pulseHint{ 0%,100%{opacity:.65;} 50%{opacity:1;} }
-
   .castle-wrap{
     width:min(90vw,360px); aspect-ratio: 701/450; overflow:hidden;
     position:relative; z-index:1; margin-top:.2em;
@@ -97,7 +90,6 @@
     position:absolute; top:-13%; left:0; width:100%; height:auto;
     mix-blend-mode:multiply;
   }
-
   /* =================================================================
      MAIN INVITATION
   ================================================================= */
@@ -107,9 +99,7 @@
     background: linear-gradient(180deg, #ffffff, var(--pale) 10%, var(--pale-deep) 75%, #c3d9ec 100%);
   }
   #invite::-webkit-scrollbar{ width:0; }
-
   #scrollContent{ position:relative; }
-
   .panel{
     position:relative; width:100%;
     padding: 5.5em 9vw 4em;
@@ -123,7 +113,6 @@
   }
   .panel-sep svg{ width:18px; height:18px; }
   .panel-sep .line{ height:1px; width:56px; background:linear-gradient(90deg, transparent, var(--blue-mid), transparent); }
-
   .eyebrow{
     font-family:'Cinzel', serif; font-weight:600; letter-spacing:.28em; font-size:.84rem;
     color:var(--blue-deeper); text-transform:uppercase;
@@ -131,7 +120,6 @@
   }
   .divider{ width:56px; height:1px; margin:1.1em auto; background:linear-gradient(90deg, transparent, var(--blue-mid), transparent); }
   .divider::after{ content:"✦"; display:block; color:var(--blue-deep); font-size:.7rem; margin-top:-9px;}
-
   .panel-card{
     position:relative;
     width:100%; max-width:380px; margin-bottom:1.6em;
@@ -148,7 +136,6 @@
   }
   .panel-card::before{ top:8px; left:8px; border-right:none; border-bottom:none; }
   .panel-card::after{ bottom:8px; right:8px; border-left:none; border-top:none; }
-
   /* ---------- Panel 1: cover ---------- */
   .xv-title{
     font-family:'Cinzel Decorative', serif; font-weight:900;
@@ -166,13 +153,10 @@
     text-shadow:0 1px 0 rgba(255,255,255,0.7);
   }
   .cover-flourish{ width:150px; margin:.6em auto 1.6em; opacity:.9; }
-
   .blessing-eyebrow{ font-size:1.18rem; color:var(--ink); margin-top:.2em; }
   .blessing-names{ font-family:'Cinzel', serif; font-weight:600; font-size:1.06rem; letter-spacing:.05em; color:var(--blue-deep); margin-top:.4em; }
-
   .quote-text{ font-size:clamp(1.18rem,4.5vw,1.42rem); line-height:1.7; max-width:23em; color:var(--ink); font-style:italic; margin-top:1.6em; }
   .quote-text b{ color:var(--blue-deep); font-style:normal; }
-
   /* ---------- Panel: photo/story ---------- */
   .frame-oval{
     width:min(52vw,190px); aspect-ratio:3/3.6; margin:0 auto 1.2em;
@@ -189,7 +173,6 @@
     width:100%; height:100%; object-fit:cover; object-position:center; display:block;
   }
   .story-text{ font-size:1.28rem; letter-spacing:.02em; color:var(--ink); max-width:26em; font-style:italic; line-height:1.6; }
-
   /* ---------- Panel: date / countdown ---------- */
   .month{ font-family:'Cinzel', serif; font-weight:600; letter-spacing:.5em; font-size:1.05rem; color:var(--blue-deeper); text-transform:uppercase; }
   .date-chips{ display:flex; align-items:center; gap:.9em; margin:.6em 0 .3em; }
@@ -205,7 +188,6 @@
     border-bottom:2px solid var(--blue-mid);
   }
   .date-chip.year{ font-size:.98rem; }
-
   .clock-wrap{ margin:1.3em auto 0.2em; width:130px; height:130px; position:relative; }
   .faltan-label{ font-family:'Cinzel', serif; font-weight:600; letter-spacing:.3em; font-size:.88rem; color:var(--blue-deeper); text-transform:uppercase; margin-top:1em; }
   .countdown-row{ display:flex; gap:.9em; justify-content:center; margin-top:.5em; flex-wrap:wrap; }
@@ -213,7 +195,6 @@
   .cd-num{ font-family:'Cinzel Decorative', serif; font-weight:700; font-size:1.9rem; color:var(--blue-deep); }
   .cd-label{ font-family:'Cinzel', serif; font-weight:600; font-size:.72rem; letter-spacing:.12em; color:var(--blue-deeper); text-transform:uppercase; margin-top:.25em;}
   .cd-sep{ font-family:'Cinzel Decorative', serif; font-size:1.5rem; color:var(--blue-soft); align-self:flex-start; margin-top:.05em;}
-
   .cta-btn{
     display:inline-block; margin-top:1.8em;
     padding:.85em 1.9em;
@@ -226,7 +207,6 @@
     cursor:pointer; border:none;
   }
   .cta-btn:active{ transform:scale(.96); }
-
   /* ---------- Panel: locations ---------- */
   .loc-block{ margin-top:0; }
   .loc-heading{ font-family:'Cinzel', serif; font-weight:600; font-size:1rem; letter-spacing:.12em; color:var(--blue-deeper); text-transform:uppercase; }
@@ -241,7 +221,6 @@
   .loc-name{ font-size:1.22rem; color:var(--ink); font-weight:700; }
   .loc-addr{ font-size:1.1rem; color:var(--ink-soft); margin-top:.15em; }
   .loc-link{ display:inline-block; margin-top:.5em; font-size:.9rem; letter-spacing:.08em; color:var(--blue-deep); font-weight:700; text-decoration:underline; text-underline-offset:3px;}
-
   /* ---------- Panel: itinerary tree ---------- */
   .card-title{
     font-family:'Cinzel', serif; font-weight:600; letter-spacing:.24em; font-size:.96rem;
@@ -272,14 +251,12 @@
     row-gap:.4em;
   }
   .tr-center{ text-align:center; }
-
   /* ---------- Panel: dress code + gallery + gift ---------- */
   .dress-wrap{ display:flex; flex-direction:column; align-items:center; }
   .dress-icons{ display:flex; gap:1.4em; margin-bottom:.8em; }
   .dress-icons svg{ width:44px; height:54px; }
   .dresscode-label{ font-family:'Cinzel', serif; font-weight:600; letter-spacing:.26em; font-size:.82rem; color:var(--blue-deeper); text-transform:uppercase;}
   .dresscode-word{ font-family:'Cinzel Decorative', serif; font-weight:700; font-size:1.8rem; color:var(--ink); margin-top:.2em;}
-
   /* ---------- Mariposas neón + destellos ---------- */
   .butterfly{
     position:fixed; bottom:-70px; z-index:55; pointer-events:none;
@@ -296,19 +273,67 @@
   @keyframes bfFlap{ from{ transform:scaleX(1);} to{ transform:scaleX(0.3);} }
   @keyframes bfSway{ from{ transform:translateX(-26px) rotate(-9deg);} to{ transform:translateX(26px) rotate(9deg);} }
   @keyframes bfRise{ from{ transform:translateY(0);} to{ transform:translateY(-118vh);} }
-
   .twinkle{
     position:fixed; width:4px; height:4px; border-radius:50%; z-index:3; pointer-events:none;
     background:#cfeeff; box-shadow:0 0 8px 2px rgba(120,210,255,.9);
     opacity:0; animation: twinkleFade ease-in-out infinite;
   }
   @keyframes twinkleFade{ 0%,100%{ opacity:0; transform:scale(.4);} 50%{ opacity:.95; transform:scale(1);} }
-
-  .gift-icon{ width:52px; height:52px; margin:1.6em auto .8em; display:block; }
-  .gift-text{ font-size:1.2rem; color:var(--ink); max-width:24em; line-height:1.65;}
-
+  /* ---------- REGALO destacado ---------- */
+  .gift-highlight{
+    position:relative;
+    width:100%; max-width:340px;
+    margin:1.5em auto 0;
+    padding:1.8em 1.5em 1.6em;
+    background:linear-gradient(180deg, rgba(255,255,255,0.97), rgba(207,224,240,0.55));
+    border:1.5px solid var(--blue-mid);
+    border-radius:18px;
+    box-shadow:0 0 0 5px rgba(169,199,222,0.28), 0 12px 26px rgba(38,65,90,0.18);
+    animation: giftGlow 3.2s ease-in-out infinite;
+  }
+  @keyframes giftGlow{
+    0%,100%{ box-shadow:0 0 0 5px rgba(169,199,222,0.28), 0 12px 26px rgba(38,65,90,0.18); }
+    50%{ box-shadow:0 0 0 5px rgba(77,183,255,0.4), 0 0 26px rgba(77,183,255,0.45), 0 12px 26px rgba(38,65,90,0.18); }
+  }
+  .gift-highlight::before, .gift-highlight::after{
+    content:"✦"; position:absolute; color:var(--blue-mid); font-size:.8rem; opacity:.8;
+  }
+  .gift-highlight::before{ top:10px; left:14px; }
+  .gift-highlight::after{ bottom:10px; right:14px; }
+  .gift-label{
+    font-family:'Cinzel', serif; font-weight:600; letter-spacing:.26em; font-size:.82rem;
+    color:var(--blue-deeper); text-transform:uppercase; margin-bottom:.2em;
+  }
+  .gift-icon{ width:52px; height:52px; margin:.5em auto .8em; display:block;
+    filter: drop-shadow(0 0 6px rgba(77,183,255,0.5));
+  }
+  .gift-text{ font-size:1.24rem; color:var(--ink); max-width:24em; line-height:1.65; margin:0 auto;}
+  .gift-text b{ color:var(--blue-deep); }
   /* ---------- Panel: RSVP / closing ---------- */
-  .rsvp-headline{ font-family:'Cinzel', serif; font-weight:600; font-size:1.15rem; color:var(--ink); }
+  .rsvp-highlight{
+    position:relative;
+    width:100%; max-width:340px;
+    margin:0 auto;
+    padding:1.8em 1.5em 1.6em;
+    background:linear-gradient(180deg, rgba(255,255,255,0.97), rgba(207,224,240,0.55));
+    border:1.5px solid var(--blue-mid);
+    border-radius:18px;
+    box-shadow:0 0 0 5px rgba(169,199,222,0.28), 0 12px 26px rgba(38,65,90,0.18);
+    animation: giftGlow 3.2s ease-in-out infinite;
+  }
+  .rsvp-highlight::before, .rsvp-highlight::after{
+    content:"✦"; position:absolute; color:var(--blue-mid); font-size:.8rem; opacity:.8;
+  }
+  .rsvp-highlight::before{ top:10px; left:14px; }
+  .rsvp-highlight::after{ bottom:10px; right:14px; }
+  .rsvp-headline{
+    font-family:'Cinzel', serif; font-weight:600; font-size:1.15rem; color:var(--blue-deep);
+    animation: rsvpGlow 3.5s ease-in-out infinite;
+  }
+  @keyframes rsvpGlow{
+    0%,100%{ text-shadow:0 2px 12px rgba(95,139,176,0.3); }
+    50%{ text-shadow:0 2px 20px rgba(77,183,255,0.85), 0 0 36px rgba(77,183,255,0.45); }
+  }
   .rsvp-sub{
     font-size:1.2rem; font-weight:700; color:var(--blue-deep);
     margin-top:.35em; max-width:20em;
@@ -326,12 +351,10 @@
   }
   .wa-btn svg{ width:27px; height:27px; fill:#fff; }
   .thanks{ font-family:'Great Vibes', cursive; font-weight:400; font-size:2.1rem; color:var(--blue-deeper); margin-top:1.3em; text-shadow:0 1px 0 rgba(255,255,255,0.7);}
-
   /* ---------- dot nav ---------- */
   #dots{ position:fixed; right:4vw; top:50%; transform:translateY(-50%); z-index:20; display:flex; flex-direction:column; gap:11px; }
   #dots .dot{ width:7px; height:7px; border-radius:50%; background:rgba(47,83,121,0.35); transition:all .3s ease; cursor:pointer; }
   #dots .dot.active{ background:var(--blue-deeper); box-shadow:0 0 6px rgba(47,83,121,0.55); transform:scale(1.4); }
-
   #sound-toggle{
     position:fixed; left:5vw; bottom:4vh; z-index:20;
     width:40px; height:40px; border-radius:50%;
@@ -340,7 +363,6 @@
     color:var(--blue-deeper); font-size:1.05rem; cursor:pointer;
     backdrop-filter:blur(4px); box-shadow:0 4px 12px rgba(38,65,90,0.12);
   }
-
   .sparkle{
     position:fixed; z-index:60; pointer-events:none;
     width:6px; height:6px; border-radius:50%;
@@ -353,12 +375,10 @@
     60%{ transform:scale(1) translateY(-14px); opacity:1;}
     100%{ transform:scale(0.3) translateY(-30px); opacity:0;}
   }
-
   @media (prefers-reduced-motion: reduce){
     .env-click-hint{ animation:none !important; }
     .butterfly, .twinkle{ display:none; }
   }
-
   /* =================================================================
      RESPONSIVE
   ================================================================= */
@@ -382,14 +402,14 @@
     .story-text{ font-size:1.18rem; }
     .loc-name{ font-size:1.12rem; }
     .loc-addr{ font-size:1rem; }
-    .gift-text{ font-size:1.1rem; }
+    .gift-text{ font-size:1.12rem; }
+    .gift-highlight, .rsvp-highlight{ padding:1.5em 1.1em 1.3em; }
     .rsvp-sub{ font-size:1.1rem; }
     .env-caption{ font-size:1.5rem; }
     #dots{ right:2.5vw; gap:9px; }
     #dots .dot{ width:6px; height:6px; }
     .bg-vine{ width:56px; background-size:56px 220px !important; opacity:.65; }
   }
-
   /* Pantallas grandes (tablet/computadora): columna centrada tipo tarjeta */
   @media (min-width:720px){
     #scrollContent{ max-width:520px; margin:0 auto; }
@@ -407,55 +427,41 @@
 </style>
 </head>
 <body>
-
 <audio id="bgMusic" src="cinderellamusic.mp3" loop></audio>
-
 <!-- ================= ENVELOPE ================= -->
 <div id="envelope-screen">
-
   <div class="bg-vine left" id="envVineLeft"></div>
   <div class="bg-vine right" id="envVineRight"></div>
-
   <img class="corona-img" src="corona.png" alt="Corona y flores">
-
   <div class="env-caption" id="envCaption">Esta invitación es especial para ti</div>
-
   <div class="env-wrap" id="envTap">
     <img src="carta.png" alt="Sobre — click para abrir">
   </div>
   <div class="env-click-hint">Click en el sobre</div>
-
   <div class="castle-wrap">
     <img class="castle-img" src="castillo.png" alt="Castillo">
   </div>
 </div>
-
 <!-- ================= INVITATION ================= -->
 <div id="invite">
   <div id="scrollContent">
     <div class="bg-vine left" id="vineLeft"></div>
     <div class="bg-vine right" id="vineRight"></div>
-
     <!-- Panel 1 — Cover -->
     <section class="panel" id="panel-cover">
       <div class="eyebrow">Acompáñanos a celebrar</div>
       <div class="xv-title">Mis XV años</div>
       <div class="quince-name">Aylín Stephanie </div>
-
       <svg class="cover-flourish" viewBox="0 0 200 26" xmlns="http://www.w3.org/2000/svg">
         <path d="M2,13 Q50,2 100,13 Q150,24 198,13" fill="none" stroke="rgb(74,122,163)" stroke-width="1" opacity="0.85"/>
         <circle cx="100" cy="13" r="3" fill="rgb(74,122,163)"/>
         <path d="M92,13 Q96,7 100,13 Q104,7 108,13 Q104,19 100,13 Q96,19 92,13Z" fill="rgb(169,199,222)" opacity="0.9"/>
       </svg>
-
       <p class="blessing-eyebrow">Con la bendición de Dios y de mis papás</p>
       <p class="blessing-names">Marlene Palacios &amp; Baldemar Ambrocio</p>
-
       <p class="quote-text">La vida está hecha de momentos inolvidables, y uno de los más especiales está por llegar. Mis <b>XV años</b> son un sueño que quiero compartir contigo.</p>
     </section>
-
     <div class="panel-sep"><div class="line"></div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.3-8.55A5 5 0 0112 6.4a5 5 0 019.3 6.05C19 16.65 12 21 12 21z" fill="none" stroke="rgb(74,122,163)" stroke-width="1.3"/></svg><div class="line"></div></div>
-
     <!-- Panel 2 — Photo / Story -->
     <section class="panel">
       <div class="frame-oval">
@@ -463,9 +469,7 @@
       </div>
       <p class="story-text">Como en todo cuento de hadas, esta noche una historia comienza. Te invito a ser parte de ella.</p>
     </section>
-
     <div class="panel-sep"><div class="line"></div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.3-8.55A5 5 0 0112 6.4a5 5 0 019.3 6.05C19 16.65 12 21 12 21z" fill="none" stroke="rgb(74,122,163)" stroke-width="1.3"/></svg><div class="line"></div></div>
-
     <!-- Panel 3 — Date / Countdown -->
     <section class="panel">
       <div class="month">Agosto</div>
@@ -474,7 +478,6 @@
         <div class="date-chip num">15</div>
         <div class="date-chip year">2026</div>
       </div>
-
       <div class="clock-wrap">
         <svg viewBox="0 0 150 150" width="100%" height="100%">
           <circle cx="75" cy="75" r="68" fill="none" stroke="rgba(74,122,163,0.4)" stroke-width="1.5"/>
@@ -491,47 +494,37 @@
           <text x="75" y="27" text-anchor="middle" font-size="9" fill="rgb(74,122,163)" font-family="serif">12</text>
         </svg>
       </div>
-
       <div class="faltan-label">Faltan</div>
       <div class="countdown-row" id="countdown"></div>
-
       <button class="cta-btn" id="ctaRsvp">Sigue hasta el final</button>
     </section>
-
     <div class="panel-sep"><div class="line"></div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.3-8.55A5 5 0 0112 6.4a5 5 0 019.3 6.05C19 16.65 12 21 12 21z" fill="none" stroke="rgb(74,122,163)" stroke-width="1.3"/></svg><div class="line"></div></div>
-
     <!-- Panel 4 — Locations -->
     <section class="panel">
       <div class="loc-block">
         <div class="loc-heading">Misa</div>
         <div class="loc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="rgb(74,122,163)" stroke-width="1.4"><path d="M11 2v3M8 5h6M11 5v4M6 11l5-4 5 4M8 11v9h6v-9" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
         <div class="loc-name">Parroquia del Perpetuo Socorro</div>
-        <div class="loc-addr">Calzada Mateo Flores 31-80</div>
+        <div class="loc-addr">Calzada Mateo Flores 31-80 zona 7</div>
         <a class="loc-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parroquia+del+Perpetuo+Socorro+Calzada+Mateo+Flores+31-80">Ver ubicación</a>
       </div>
-
       <div class="divider"></div>
-
       <div class="loc-block">
         <div class="loc-heading">Recepción</div>
         <div class="loc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="rgb(74,122,163)" stroke-width="1.4"><path d="M11 3a5 5 0 015 5v3l1.5 3h-13L6 11V8a5 5 0 015-5z" stroke-linejoin="round"/><path d="M9 17a2 2 0 004 0" stroke-linejoin="round"/></svg></div>
         <div class="loc-name">Club Majadas, zona 11</div>
-        <div class="loc-addr">Salón 1</div>
+        <div class="loc-addr">Salón A</div>
         <a class="loc-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Club+Majadas+zona+11">Ver ubicación</a>
       </div>
     </section>
-
     <div class="panel-sep"><div class="line"></div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.3-8.55A5 5 0 0112 6.4a5 5 0 019.3 6.05C19 16.65 12 21 12 21z" fill="none" stroke="rgb(74,122,163)" stroke-width="1.3"/></svg><div class="line"></div></div>
-
     <!-- Panel 5 — Itinerary tree -->
     <section class="panel">
       <div class="card-title">Itinerario de actividades</div>
       <div class="itin-tree" id="itinTree"></div>
     </section>
-
     <div class="panel-sep"><div class="line"></div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.3-8.55A5 5 0 0112 6.4a5 5 0 019.3 6.05C19 16.65 12 21 12 21z" fill="none" stroke="rgb(74,122,163)" stroke-width="1.3"/></svg><div class="line"></div></div>
-
-    <!-- Panel 6 — Dress code + Gallery + Gift -->
+    <!-- Panel 6 — Dress code + Gift -->
     <section class="panel">
       <div class="dress-wrap">
         <div class="dress-icons">
@@ -541,45 +534,40 @@
         <div class="dresscode-label">Código de vestimenta</div>
         <div class="dresscode-word">Formal</div>
       </div>
-
       <div class="divider"></div>
-
-      <svg class="gift-icon" viewBox="0 0 24 24" fill="none" stroke="rgb(74,122,163)" stroke-width="1.4">
-        <rect x="3" y="9" width="18" height="11" stroke-linejoin="round"/>
-        <path d="M3 9h18v4H3z" fill="rgba(191,214,232,0.5)"/>
-        <path d="M12 9v11M12 9c-2-4-7-4-7-1s3 1 7 1zM12 9c2-4 7-4 7-1s-3 1-7 1z" stroke-linejoin="round"/>
-      </svg>
-      <p class="gift-text">Lo más importante es tu presencia, pero si quieres darme un obsequio o un sobre, te lo agradecería mucho.</p>
+      <div class="gift-highlight">
+        <div class="gift-label">Regalo</div>
+        <svg class="gift-icon" viewBox="0 0 24 24" fill="none" stroke="rgb(74,122,163)" stroke-width="1.4">
+          <rect x="3" y="9" width="18" height="11" stroke-linejoin="round"/>
+          <path d="M3 9h18v4H3z" fill="rgba(191,214,232,0.5)"/>
+          <path d="M12 9v11M12 9c-2-4-7-4-7-1s3 1 7 1zM12 9c2-4 7-4 7-1s-3 1-7 1z" stroke-linejoin="round"/>
+        </svg>
+        <p class="gift-text">Lo más importante es tu presencia, pero si quieres darme un <b>obsequio</b> o un <b>sobre</b>, te lo agradecería mucho.</p>
+      </div>
     </section>
-
     <div class="panel-sep"><div class="line"></div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.3-8.55A5 5 0 0112 6.4a5 5 0 019.3 6.05C19 16.65 12 21 12 21z" fill="none" stroke="rgb(74,122,163)" stroke-width="1.3"/></svg><div class="line"></div></div>
-
     <!-- Panel 7 — RSVP / closing -->
     <section class="panel" id="panel-rsvp">
-      <div class="rsvp-headline">Confirma tu asistencia aquí</div>
-      <div class="rsvp-sub">Por favor confirmar asistencia antes del <b>8 de Agosto</b></div>
-
-      <div class="pases-info" id="pasesInfo" style="display:none;">
-        <div class="eyebrow">Invitados asignados</div>
-        <div class="pases-num" id="pasesNum"></div>
+      <div class="rsvp-highlight">
+        <div class="rsvp-headline">Confirma tu asistencia aquí</div>
+        <div class="rsvp-sub">Por favor confirmar asistencia antes del <b>8 de Agosto</b></div>
+        <div class="pases-info" id="pasesInfo" style="display:none;">
+          <div class="eyebrow">Invitados asignados</div>
+          <div class="pases-num" id="pasesNum"></div>
+        </div>
+        <a class="wa-btn" id="waBtn" target="_blank" rel="noopener" href="https://wa.me/50237793354?text=Confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Aylin" aria-label="Confirmar por WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C9.4 8.6 9 7.6 8.8 7.2c-.2-.4-.4-.3-.5-.3h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 00-8.7 15L2 22l5.2-1.3A10 10 0 1012 2zm0 18.2a8.1 8.1 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+        </a>
       </div>
-
-      <a class="wa-btn" id="waBtn" target="_blank" rel="noopener" href="https://wa.me/50237793354?text=Confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Aylin" aria-label="Confirmar por WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C9.4 8.6 9 7.6 8.8 7.2c-.2-.4-.4-.3-.5-.3h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 00-8.7 15L2 22l5.2-1.3A10 10 0 1012 2zm0 18.2a8.1 8.1 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
-      </a>
       <div class="thanks">¡Te esperamos!</div>
     </section>
-
   </div>
 </div>
-
 <div id="dots"></div>
 <div id="sound-toggle" aria-label="Silenciar música">♪</div>
-
 <script>
 /* Cambia este número si en algún momento usas otro WhatsApp */
-const WHATSAPP_NUMBER = "50237793354";
-
+const WHATSAPP_NUMBER = "50232234800";
 /* ---------------- Itinerary tree ---------------- */
 const icons = {
   church: '<path d="M11 2v2.5M9 3.2h4M11 4.5v3.5M6 10.5l5-4 5 4M8 10.5V20h3v-4h2v4h3v-9.5" stroke="rgb(74,122,163)" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>',
@@ -614,7 +602,6 @@ document.getElementById('itinTree').innerHTML = pairs.map(p => {
     <div class="tr-label tr-right"><div class="tr-name">${p.right.name}</div><div class="tr-time">${p.right.time}</div></div>
   </div>`;
 }).join('');
-
 /* ---------------- Rose & vine background ---------------- */
 function roseSVG(cx, cy, scale, rot){
   const rings = [
@@ -659,7 +646,6 @@ function applyVineBackgrounds(){
   });
 }
 applyVineBackgrounds();
-
 /* ---------------- Analog clock ---------------- */
 const hourHand = document.getElementById('hourHand');
 const minHand = document.getElementById('minHand');
@@ -669,7 +655,6 @@ setInterval(()=>{
   minHand.setAttribute('transform', `rotate(${(clockT % 60) * 6} 75 75)`);
   hourHand.setAttribute('transform', `rotate(${(clockT % 720) / 720 * 360} 75 75)`);
 }, 1200);
-
 /* ---------------- Countdown ---------------- */
 const targetDate = new Date("2026-08-15T16:00:00-06:00");
 const cdEl = document.getElementById('countdown');
@@ -688,11 +673,9 @@ function renderCountdown(){
 }
 renderCountdown();
 setInterval(renderCountdown, 1000);
-
 /* ---------------- Scroll helper ---------------- */
 function goTo(id){ document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'}); }
 document.getElementById('ctaRsvp').addEventListener('click', ()=> goTo('panel-rsvp'));
-
 /* ---------------- Dots nav ---------------- */
 const inviteEl = document.getElementById('invite');
 const panels = Array.from(document.querySelectorAll('.panel'));
@@ -712,7 +695,6 @@ const io = new IntersectionObserver((entries)=>{
   });
 }, {root: inviteEl, threshold:0.35});
 panels.forEach(p=>io.observe(p));
-
 /* ---------------- Sparkle tap effect ---------------- */
 function spawnSparkle(x,y){
   const s = document.createElement('div');
@@ -726,7 +708,6 @@ document.addEventListener('pointerdown', (e)=>{
   if(e.target.closest('.env-wrap') || e.target.closest('.wa-btn') || e.target.closest('.cta-btn')) return;
   spawnSparkle(e.clientX, e.clientY);
 });
-
 /* ---------------- Mariposas neón flotantes ---------------- */
 function butterflySVG(i){
   return `
@@ -782,40 +763,32 @@ function spawnTwinkles(){
 }
 spawnButterflies();
 spawnTwinkles();
-
 /* ---------------- Personalización por invitado (nombre + invitados via URL) ----------------
    El link acepta ?invitados=2 (nuevo) y también ?pases=2 (links antiguos siguen funcionando) */
 const params = new URLSearchParams(window.location.search);
 const guestName = params.get('name');
 const guestInvitados = params.get('invitados') || params.get('pases');
-
 if (guestInvitados) {
   document.getElementById('pasesNum').textContent = guestInvitados;
   document.getElementById('pasesInfo').style.display = 'block';
 }
-
 let baseMsg = 'Confirmo mi asistencia a los XV años de Aylin.';
 if (guestName) baseMsg += ` Soy ${guestName}.`;
 if (guestInvitados) baseMsg += ` Número de invitados: ${guestInvitados}.`;
-
 const waBtn = document.getElementById('waBtn');
 waBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(baseMsg)}`;
-
 if (guestName) {
   document.getElementById('envCaption').textContent = `Querido/a ${guestName}, esta invitación es especial para ti`;
 }
-
 /* ---------------- Music ---------------- */
 const audio = document.getElementById('bgMusic');
 function startMusic(){ audio.play().catch(()=>{}); }
-
 let muted = false;
 document.getElementById('sound-toggle').addEventListener('click', ()=>{
   muted = !muted;
   document.getElementById('sound-toggle').textContent = muted ? '✕' : '♪';
   audio.muted = muted;
 });
-
 /* ---------------- Envelope open ---------------- */
 document.getElementById('envTap').addEventListener('click', ()=>{
   const screen = document.getElementById('envelope-screen');
